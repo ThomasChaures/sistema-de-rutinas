@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AddClientView from '@/views/AddClientView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,6 +13,7 @@ const router = createRouter({
     {
       path: '/cliente-nuevo',
       name: 'cliente-nuevo',
+      component: AddClientView
     },
     {
       path: '/cliente/:dni',
