@@ -1,33 +1,48 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import AddClientView from '@/views/AddClientView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
+import AddClientView from "@/views/AddClientView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "home",
       component: HomeView,
+      meta: {
+        admin: true,
+      },
     },
     {
-      path: '/cliente-nuevo',
-      name: 'cliente-nuevo',
-      component: AddClientView
+      path: "/cliente-nuevo",
+      name: "cliente-nuevo",
+      component: AddClientView,
+      meta: {
+        admin: true,
+      },
     },
     {
-      path: '/cliente/:dni',
-      name: 'cliente',
+      path: "/cliente/:dni",
+      name: "cliente",
+      meta: {
+        admin: true,
+      },
     },
     {
-      path: '/cliente/:dni/eliminar',
-      name: 'cliente-eliminar',
+      path: "/cliente/:dni/eliminar",
+      name: "cliente-eliminar",
+      meta: {
+        admin: true,
+      },
     },
     {
-      path: '/cliente/:dni/editar',
-      name: 'cliente-editar',
+      path: "/cliente/:dni/editar",
+      name: "cliente-editar",
+      meta: {
+        admin: true,
+    }
     },
   ],
-})
+});
 
-export default router
+export default router;
