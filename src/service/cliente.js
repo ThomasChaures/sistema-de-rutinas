@@ -19,6 +19,7 @@ export const crearCliente = async (cliente) => {
     ...cliente,
     rutina: "Sin rutina",
     eliminado: false,
+    id_rutina: "",
   });
 };
 
@@ -45,7 +46,14 @@ export const editarCliente = async () => {
 
     if (!snap.empty) {
       const docRef = snap.docs[0].ref;
-      return await updateDoc(docRef, {nombre, apellido, rutina, peso, altura, edad });
+      return await updateDoc(docRef, {
+        nombre,
+        apellido,
+        rutina,
+        peso,
+        altura,
+        edad,
+      });
     } else {
       throw new Error("No se encontró el cliente con ese DNI.");
     }
